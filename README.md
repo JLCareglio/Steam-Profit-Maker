@@ -17,9 +17,9 @@ Cuando termine de cargar las mismas mostrara un resumen completo con los datos e
 
 ![Parte 3 - Resumen](https://user-images.githubusercontent.com/86386696/123181160-1c810380-d463-11eb-8b9a-feb9184fbab2.png)
 
-En caso que el juego tenga cromos caros que no se vendan, tambien lo advertira, y puedes revisar la lista de precios de los cromos colocando '*'
+En caso que el juego tenga cromos que no se venden, tambien lo advertira, y puedes revisar la lista de precios de los cromos colocando '*'
 
-![image](https://user-images.githubusercontent.com/86386696/123181229-46d2c100-d463-11eb-8b88-f7b76e1ac88b.png)
+![image](https://user-images.githubusercontent.com/86386696/123182060-02482500-d465-11eb-84e4-a839a5d2db1d.png)
 
 
 
