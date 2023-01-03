@@ -24,7 +24,7 @@ def prices_list (app_id, games_to_scan, scanned_games):
 
     for card_hash in market_hash:
         
-        url = "https://steamcommunity.com/market/priceoverview/?currency=34&appid=753&market_hash_name=" + card_hash.replace(' ','%20')
+        url = "https://steamcommunity.com/market/priceoverview/?currency=34&appid=753&market_hash_name=" + card_hash.replace(' ','%20').replace("&", "%26").replace("/", "-")
         datos = requests.get(url).content
         soup = BeautifulSoup(datos,features="html.parser")
         card_json = json.loads(str(soup))
