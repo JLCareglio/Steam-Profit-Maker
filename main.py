@@ -1,8 +1,8 @@
-from colorama import init, Fore, Back, Style
-from scan import single_scan, multi_scan
+from colorama import Back, Fore, Style, init
+
+from scan import multi_scan, single_scan
 from sorter import sort_profit
-from summary import single, multi
-import time, os
+from summary import multi, single
 
 
 def main():
@@ -12,15 +12,13 @@ def main():
     print(Style.BRIGHT + "\nPuede introducir varios ID separados por una coma ','")
     apps = input("Introduzca el App ID del juego: ")
 
-    apps = apps.replace(' ','').split(',')
+    apps = apps.replace(" ", "").split(",")
 
-
-    lista_apps = {} 
-    #lista_apps toma de identificador el ID del juego y separa los componentes de la siguiente forma
-    #Nombre del Juego, Numero de cromos
+    lista_apps = {}
+    # lista_apps toma de identificador el ID del juego y separa los componentes de la siguiente forma
+    # Nombre del Juego, Numero de cromos
 
     while True:
-
 
         if len(apps) == 1:
 
@@ -28,17 +26,45 @@ def main():
 
             if app_id in lista_apps:
 
-                game_name, game_price, cards_drop, price_cards, average, cheap_card, cheap_profit, average_profit, sale_alert, expensive_alert = lista_apps[app_id]
-                summary = app_id, game_name, game_price, cards_drop, price_cards, average, cheap_card, sale_alert, expensive_alert
+                (
+                    game_name,
+                    game_price,
+                    cards_drop,
+                    price_cards,
+                    average,
+                    cheap_card,
+                    cheap_profit,
+                    average_profit,
+                    sale_alert,
+                    expensive_alert,
+                ) = lista_apps[app_id]
+                summary = (
+                    app_id,
+                    game_name,
+                    game_price,
+                    cards_drop,
+                    price_cards,
+                    average,
+                    cheap_card,
+                    sale_alert,
+                    expensive_alert,
+                )
                 single(summary)
-                print("\nPara ver informacion de los cromos coloque '*'")
-
             else:
 
                 lista_apps.update(single_scan(app_id))
-                game_name, game_price, cards_drop, price_cards, average, cheap_card, cheap_profit, average_profit, sale_alert, expensive_alert = lista_apps[app_id]
-
-                print("\nPara ver informacion de los cromos coloque '*'")
+                (
+                    game_name,
+                    game_price,
+                    cards_drop,
+                    price_cards,
+                    average,
+                    cheap_card,
+                    cheap_profit,
+                    average_profit,
+                    sale_alert,
+                    expensive_alert,
+                ) = lista_apps[app_id]
 
         elif len(apps) > 1:
             app_ids = {}
@@ -50,20 +76,20 @@ def main():
 
             lista_apps.update(app_ids)
 
-
-
-        print(Style.BRIGHT + "\n\nPuede introducir varios ID separados por una ','")
+        print(Style.BRIGHT + "\nPuede introducir varios ID separados por una ','")
         apps = input("Introduzca el App ID del juego: ")
+        print("")
 
-        while apps == '*':
-            print('\nEl precio de los cromos y su volumen de ventas es de:\n\n' + price_cards)
+        # while apps == "*":
+        #     print(
+        #         "\nEl precio de los cromos y su volumen de ventas es de:\n\n"
+        #         + price_cards
+        #     )
 
-            print(Style.BRIGHT + "\n\nPuede introducir varios ID separados por una ','")
-            apps = input("Introduzca el App ID del juego: ")
+        #     print(Style.BRIGHT + "\nPuede introducir varios ID separados por una ','")
+        #     apps = input("Introduzca el App ID del juego: ")
 
-        apps = apps.replace(' ','').split(',')
-
-
+        apps = apps.replace(" ", "").split(",")
 
 
 main()

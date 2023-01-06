@@ -17,6 +17,8 @@ def prices_list(app_id, games_to_scan, scanned_games):
 
     API_URL = os.getenv("API_ENDPOINT_URL")
     AUTH_KEY = os.getenv("PROXIESAPI_AUTH_KEY")
+    LINE_UP = "\033[1A"
+    LINE_CLEAR = "\x1b[2K"
 
     try:
         market_hash, cards, game_name = get_market_hash(
@@ -51,9 +53,13 @@ def prices_list(app_id, games_to_scan, scanned_games):
 
         points = "." * (loaded_cards % 4)
 
-        os.system("cls")
-        loading_text = Fore.CYAN + "Cargando: {} cartas de {}{}".format(
-            loaded_cards, cards, points
+        # os.system('clear')
+        for i in range(4):
+            print(LINE_UP, end=LINE_CLEAR)
+        cant_line_clear = 0
+
+        loading_text = Fore.CYAN + "Cargando 🎴: {} de {} ({}){}".format(
+            loaded_cards, cards, card_hash.split("-", 1)[1], points
         )
         loading_bar = (
             Fore.YELLOW
@@ -70,10 +76,7 @@ def prices_list(app_id, games_to_scan, scanned_games):
 
         print(
             Style.BRIGHT
-            + "App ID: "
-            + str(app_id)
-            + "  ─  "
-            + "Juego {} de {}\n".format(scanned_games, games_to_scan)
+            + f"🎮 {game_name}  ─  🔑 AppID: {str(app_id)}  ─  👀 Juego {scanned_games} de {games_to_scan}\n"
         )
         print(loading_text)
         print(loading_bar)
@@ -85,6 +88,8 @@ def prices_list(app_id, games_to_scan, scanned_games):
             success = card_json["success"]
         except:
             print("Problema con el cromo")
+            cant_line_clear += 1
+            time.sleep(0.5)
             pass
 
         if success == True:
@@ -94,12 +99,16 @@ def prices_list(app_id, games_to_scan, scanned_games):
             except:
                 price_card = "0"
                 print("Problema con el lowest_price")
+                cant_line_clear += 1
+                time.sleep(0.5)
 
             try:
                 volume = card_json["volume"]
             except:
                 volume = "0"
-                # print('Problema con el Volumen')
+                print("Problema con el Volumen")
+                cant_line_clear += 1
+                time.sleep(0.5)
 
             prices += (price_card.replace(".", "").replace(",", "."),)
             volume_list += (volume,)
@@ -128,6 +137,9 @@ def prices_list(app_id, games_to_scan, scanned_games):
                 success = False
 
                 break
+
+        for i in range(cant_line_clear):
+            print(LINE_UP, end=LINE_CLEAR)
 
     if len(market_hash) == 0:
         volume = "0"
