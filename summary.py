@@ -83,13 +83,10 @@ def multi(app_ids, cheap_list, average_list, noprofit):
 
         if len(cheap_list) > 0:
             print(
-                "✅ Los siguientes {} juegos dan profit seguro:".format(len(cheap_list))
+                f"""        {Fore.MAGENTA}= = = = = = = = = = = = = = = = = = = = = = =
+        {Fore.WHITE}✅ Los siguientes {len(cheap_list)} juegos dan profit seguro:
+        {Fore.MAGENTA}= = = = = = = = = = = = = = = = = = = = = = =\n"""
             )
-
-            print(
-                Fore.MAGENTA
-                + "\n─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─\n"
-            )  # 30
 
             for app_id in cheap_list:
                 (
@@ -118,16 +115,19 @@ def multi(app_ids, cheap_list, average_list, noprofit):
                 )
 
                 single(summary)
+
                 print(
                     Fore.MAGENTA
                     + "\n─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─\n"
                 )  # 30
+            for i in range(2):
+                print(LINE_UP, end=LINE_CLEAR)
 
         if len(average_list) > 0:
             print(
-                "👀 Los siguientes {} juegos pueden dar profit:".format(
-                    len(average_list)
-                )
+                f"""        {Fore.MAGENTA}= = = = = = = = = = = = = = = = = = = = = = =
+        {Fore.WHITE}👀 Los siguientes {len(average_list)} juegos pueden dar profit:
+        {Fore.MAGENTA}= = = = = = = = = = = = = = = = = = = = = = =\n"""
             )
 
             for app_id in average_list:
@@ -161,19 +161,36 @@ def multi(app_ids, cheap_list, average_list, noprofit):
                     Fore.MAGENTA
                     + "\n─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─\n"
                 )  # 30
+            for i in range(2):
+                print(LINE_UP, end=LINE_CLEAR)
 
         if len(noprofit) > 0:
-            noprofit_ids = ""
-            for noprofit_id in noprofit:
-
-                noprofit_ids += noprofit_id + " "
-
             print(
-                Fore.RED + "⛔ Las siguientes ID no dan profit: {}".format(noprofit_ids)
+                f"""        {Fore.MAGENTA}= = = = = = = = = = = = = = = = = = = = = = =
+        {Fore.RED}⛔ Los siguientes {len(noprofit)} juegos no dan profit:
+        {Fore.MAGENTA}= = = = = = = = = = = = = = = = = = = = = = =\n"""
             )
 
+            for app_id in noprofit:
+                (
+                    game_name,
+                    game_price,
+                    cards_drop,
+                    price_cards,
+                    average,
+                    cheap_card,
+                    cheap_profit,
+                    average_profit,
+                    sale_alert,
+                    expensive_alert,
+                ) = app_ids[app_id]
+
+                print(f"{Fore.WHITE}🎮 {game_name}  ─  🔑 AppID: {app_id}\n")
+                
+            print(LINE_UP, end=LINE_CLEAR)
+
     else:
-        print("⛔ Ningun juego de la lista da profit.")
+        print("⛔ Ningún juego de la lista da profit.")
 
 
 # sale_alert = Fore.RED + '	ALERTA: Los cromos se venden muy poco (menos de 10 ventas en las ultimas 24 hs)' + Fore.WHITE
