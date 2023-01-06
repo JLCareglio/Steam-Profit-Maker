@@ -15,8 +15,10 @@ def prices_list(app_id, games_to_scan, scanned_games):
 
     loaded_cards = 1
 
+    load_dotenv()  # take environment variables from .env.
     API_URL = os.getenv("API_ENDPOINT_URL")
     AUTH_KEY = os.getenv("PROXIESAPI_AUTH_KEY")
+
     LINE_UP = "\033[1A"
     LINE_CLEAR = "\x1b[2K"
 
@@ -52,15 +54,16 @@ def prices_list(app_id, games_to_scan, scanned_games):
         card_json = json.loads(str(soup))
 
         points = "." * (loaded_cards % 4)
+        card_name = card_hash.split("-", 1)[1]
+        proxy_text = "🕵️" if AUTH_KEY else ""
 
         # os.system('clear')
         for i in range(4):
             print(LINE_UP, end=LINE_CLEAR)
         cant_line_clear = 0
 
-        loading_text = Fore.CYAN + "Cargando 🎴: {} de {} ({}){}".format(
-            loaded_cards, cards, card_hash.split("-", 1)[1], points
-        )
+        loading_text = f"{Fore.CYAN}{proxy_text} Cargando 🎴: {loaded_cards} de {cards} ({card_name}){points}"
+
         loading_bar = (
             Fore.YELLOW
             + Style.DIM
