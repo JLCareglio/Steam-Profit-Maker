@@ -29,7 +29,6 @@ def single_scan(app_id):
         game_name,
     ) = price_ars(app_id, 1, 1)
 
-
     if success == True:
 
         fees = 0.874
@@ -46,7 +45,7 @@ def single_scan(app_id):
                 price_total -= float(price_list[-i][5:])
 
             expensive_alert = (
-                "\n*       "
+                "\n"
                 + Fore.RED
                 + ">ALERTA: El juego posee uno o mas cromos muy caros que no se venden."
                 + Fore.WHITE
@@ -113,7 +112,7 @@ def single_scan(app_id):
             sale_alert,
             expensive_alert,
         ]
-        
+
         os.system("clear")
         single(summary)
 
@@ -170,7 +169,7 @@ def multi_scan(apps):
                     price_total -= float(price_list[-i][5:])
 
                 expensive_alert = (
-                    "\n*       "
+                    "\n"
                     + Fore.RED
                     + ">ALERTA: El juego posee uno o mas cromos muy caros que no se venden."
                     + Fore.WHITE
