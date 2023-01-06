@@ -1,6 +1,7 @@
 import json
 import os
 import time
+import urllib.parse
 
 import requests
 from bs4 import BeautifulSoup
@@ -33,9 +34,10 @@ def prices_list(app_id, games_to_scan, scanned_games):
 
     for card_hash in market_hash:
         datos = None
-        url = (
-            "https://steamcommunity.com/market/priceoverview/?currency=34&appid=753&market_hash_name="
-            + card_hash.replace(" ", "%20")
+        url = "https://steamcommunity.com/market/priceoverview/?currency=34&appid=753&market_hash_name=" + urllib.parse.quote(
+            card_hash
+        ).replace(
+            "/", "-"
         )
 
         if AUTH_KEY == None:
