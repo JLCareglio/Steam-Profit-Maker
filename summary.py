@@ -22,21 +22,38 @@ def single(summary):
         expensive_alert,
     ) = summary
 
+    fees = 0.874
+    low_price_card = float(
+        price_cards.replace(",", " ||").split("||")[1].lstrip(" ARS$").strip()
+    )
+    high_price_card = float(
+        price_cards.replace(",", " ||").split("||")[-3].lstrip(" ARS$").strip()
+    )
+    cheap_card = round(low_price_card * cards_drop * fees, 2)
+    expensive_card = round(high_price_card * cards_drop * fees, 2)
+
     try:
         cheap_profit = cheap_card - game_price
+        expensive_profit = expensive_card - game_price
         average_profit = average - game_price
 
-        if cheap_profit > 0:
-            cheap_profit = Fore.GREEN + "%.2f" % (cheap_profit)
-            average_profit = Fore.GREEN + "%.2f" % (average_profit)
+        cheap_profit = (
+            Fore.GREEN + "%.2f" % (cheap_profit)
+            if cheap_profit > 0
+            else Fore.RED + "%.2f" % (cheap_profit)
+        )
 
-        elif average_profit > 0:
-            cheap_profit = Fore.RED + "%.2f" % (cheap_profit)
-            average_profit = Fore.GREEN + "%.2f" % (average_profit)
+        expensive_profit = (
+            Fore.GREEN + "%.2f" % (expensive_profit)
+            if expensive_profit > 0
+            else Fore.RED + "%.2f" % (expensive_profit)
+        )
 
-        else:
-            cheap_profit = Fore.RED + "%.2f" % (cheap_profit)
-            average_profit = Fore.RED + "%.2f" % (average_profit)
+        average_profit = (
+            Fore.GREEN + "%.2f" % (average_profit)
+            if average_profit > 0
+            else Fore.RED + "%.2f" % (average_profit)
+        )
 
     except:
         cheap_profit = None
@@ -52,23 +69,25 @@ def single(summary):
 
     print(
         Fore.CYAN
-        + "\n🎴+Barato: {}$ARS	─  🎴+Caro: {}$ARS".format(
-            price_cards.replace(",", " ||").split("||")[1].lstrip(" ARS$"),
-            price_cards.replace(",", " ||").split("||")[-3].lstrip(" ARS$"),
+        + "\n🎴 + Barato: {} $ARS	─  🎴 + Caro: {} $ARS".format(
+            "%.2f" % (low_price_card), "%.2f" % (high_price_card)
         )
         + Fore.WHITE
     )
-    print(
-        Fore.CYAN
-        + "Promedio: {} $ARS	─  Con el cromo barato: {} $ARS".format(
-            average, cheap_card
-        )
-        + Fore.WHITE
-    )
+    # print(
+    #     Fore.CYAN
+    #     + "Promedio: {} $ARS	─  Con el cromo barato: {} $ARS".format(
+    #         average, cheap_card
+    #     )
+    #     + Fore.WHITE
+    # )
 
     if type(game_price) == float:
-        print("\nProfit Cromo Barato	─	Profit Promedio")
-        print("     {} $ARS		─          {} $ARS".format(cheap_profit, average_profit))
+        print(
+            f"""↘️ Profit mínimo posible: {cheap_profit} $ARS{Fore.WHITE}
+↗️ Profit máximo posible: {expensive_profit} $ARS{Fore.WHITE}
+➡️ Profit Promedio: {average_profit} $ARS{Fore.WHITE}"""
+        )
 
     print("\n📝 Precio de todos los cromos y su volumen de ventas:\n" + price_cards)
 
@@ -186,8 +205,10 @@ def multi(app_ids, cheap_list, average_list, noprofit):
                 ) = app_ids[app_id]
 
                 print(f"{Fore.WHITE}🎮 {game_name}  ─  🔑 AppID: {app_id}\n")
-                
+
             print(LINE_UP, end=LINE_CLEAR)
+
+        print(f"{Fore.BLUE}Nota: se guardo un informe con todos los datos de los juegos escaneados, puedes encontrar el informe dentro de un archivo .csv con la fecha actual en la carpeta data")
 
     else:
         print("⛔ Ningún juego de la lista da profit.")
