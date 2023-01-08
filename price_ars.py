@@ -17,6 +17,4 @@ def price_ars(app_id, games_to_scan, scanned_games):
 
             price_cards += float(price.replace("ARS$ ", ""))
 
-        price_cards = round(price_cards, 2)
-
     return price_cards, cards_drop, cards, price_list, volume_list, success, game_name
