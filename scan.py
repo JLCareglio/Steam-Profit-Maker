@@ -38,6 +38,8 @@ def single_scan(app_id):
 
         price_list, volume_list = sort(price_list, volume_list)
         expensive_cards, sale_alert = check(price_list, volume_list)
+        low_price_card = float(price_list[0][5:]) if price_list[0][5:] else 0.0
+        high_price_card = float(price_list[-1][5:]) if price_list[-1][5:] else 0.0
 
         if expensive_cards > 0:
 
@@ -56,7 +58,7 @@ def single_scan(app_id):
             cards_drop * (float(price_total) / float(cards_total)) * fees, 2
         )
 
-        cheap_card = round(float(price_list[0][5:]) * cards_drop * fees, 2)
+        cheap_card = round(low_price_card * cards_drop * fees, 2)
         cheap_profit = "Profit con el cromo mas barato: No calculado"
         average_profit = "Profit promedio: No calculado"
 
@@ -210,6 +212,7 @@ def multi_scan(apps):
                 high_price_card = (
                     float(price_list[-1][5:]) if price_list[-1][5:] else 0.0
                 )
+
                 cheap_card = round(low_price_card * cards_drop * fees, 2)
                 expensive_card = round(high_price_card * cards_drop * fees, 2)
                 cheap_profit = "Profit con el cromo mas barato: No calculado"
