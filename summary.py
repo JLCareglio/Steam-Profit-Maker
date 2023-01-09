@@ -102,9 +102,9 @@ def multi(app_ids, cheap_list, average_list, noprofit):
 
         if len(cheap_list) > 0:
             print(
-                f"""        {Fore.MAGENTA}= = = = = = = = = = = = = = = = = = = = = = =
-        {Fore.WHITE}✅ Los siguientes {len(cheap_list)} juegos dan profit seguro:
-        {Fore.MAGENTA}= = = = = = = = = = = = = = = = = = = = = = =\n"""
+                f"""        {Fore.GREEN}= = = = = = = = = = = = = = = = = = = = = = =
+        ✅ Los siguientes {len(cheap_list)} juegos dan profit seguro:
+        = = = = = = = = = = = = = = = = = = = = = = =\n"""
             )
 
             for app_id in cheap_list:
@@ -144,9 +144,9 @@ def multi(app_ids, cheap_list, average_list, noprofit):
 
         if len(average_list) > 0:
             print(
-                f"""        {Fore.MAGENTA}= = = = = = = = = = = = = = = = = = = = = = =
-        {Fore.WHITE}👀 Los siguientes {len(average_list)} juegos pueden dar profit:
-        {Fore.MAGENTA}= = = = = = = = = = = = = = = = = = = = = = =\n"""
+                f"""        {Fore.YELLOW}= = = = = = = = = = = = = = = = = = = = = = =
+        👀 Los siguientes {len(average_list)} juegos pueden dar profit:
+        = = = = = = = = = = = = = = = = = = = = = = =\n"""
             )
 
             for app_id in average_list:
@@ -185,9 +185,9 @@ def multi(app_ids, cheap_list, average_list, noprofit):
 
         if len(noprofit) > 0:
             print(
-                f"""        {Fore.MAGENTA}= = = = = = = = = = = = = = = = = = = = = = =
-        {Fore.RED}⛔ Los siguientes {len(noprofit)} juegos no dan profit:
-        {Fore.MAGENTA}= = = = = = = = = = = = = = = = = = = = = = =\n"""
+                f"""        {Fore.RED}= = = = = = = = = = = = = = = = = = = = = = =
+        ⛔ Los siguientes {len(noprofit)} juegos no dan profit:
+        = = = = = = = = = = = = = = = = = = = = = = ={Fore.WHITE}\n"""
             )
 
             for app_id in noprofit:
@@ -204,11 +204,12 @@ def multi(app_ids, cheap_list, average_list, noprofit):
                     expensive_alert,
                 ) = app_ids[app_id]
 
-                print(f"{Fore.WHITE}🎮 {game_name}  ─  🔑 AppID: {app_id}\n")
+                print(f"🔑 AppID: {app_id}  ─  🎮 {game_name}")
+            print(f"{Fore.WHITE}")
 
-            print(LINE_UP, end=LINE_CLEAR)
-
-        print(f"{Fore.BLUE}Nota: se guardo un informe con todos los datos de los juegos escaneados, puedes encontrar el informe dentro de un archivo .csv con la fecha actual en la carpeta data")
+        print(
+            f"{Fore.BLUE}Nota: se guardo un informe con todos los datos de los juegos escaneados.\nPuedes encontrar el informe dentro de la carpeta data en un archivo .csv con la fecha actual"
+        )
 
     else:
         print("⛔ Ningún juego de la lista da profit.")
