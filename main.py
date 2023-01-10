@@ -1,3 +1,7 @@
+import msvcrt
+import os
+import re
+
 from colorama import Back, Fore, Style, init
 
 from scan import multi_scan, single_scan
@@ -7,16 +11,15 @@ from summary import multi, single
 
 def main():
 
+    rEspaciosSobrantes = re.compile(r"^\s+|\s+$|\s+(?=\s)")
+    rSecuenciaNumérica = re.compile(r"\d+")
+
     init(autoreset=True)
 
-    print(Style.BRIGHT + "\nPuede introducir varios ID separados por una coma ','")
-    apps = input("Introduzca el App ID del juego: ")
+    os.system("clear")
 
-    apps = apps.replace(" ", "").split(",")
-
+    apps = []
     lista_apps = {}
-    # lista_apps toma de identificador el ID del juego y separa los componentes de la siguiente forma
-    # Nombre del Juego, Numero de cromos
 
     while True:
 
@@ -50,6 +53,7 @@ def main():
                     expensive_alert,
                 )
                 single(summary)
+                print("")
             else:
 
                 lista_apps.update(single_scan(app_id))
@@ -76,9 +80,34 @@ def main():
 
             lista_apps.update(app_ids)
 
-        print(Style.BRIGHT + "\nPuede introducir varios ID separados por una ','")
-        apps = input("Introduzca el App ID del juego: ")
-        print("")
+        print(
+            Style.BRIGHT
+            + Fore.BLUE
+            + "Puede introducir varios juegos separandolos por coma ',' o espacios"
+        )
+        apps = input(f"Introduzca los AppIDs o las URLs de los juegos:{Fore.YELLOW}\n")
+
+        apps = re.sub(rEspaciosSobrantes, "", apps.replace(",", " ")).split(" ")
+        apps = [
+            rSecuenciaNumérica.search(x).group() if rSecuenciaNumérica.search(x) else x
+            for x in apps
+        ]
+
+        datos_inválidos = [x for x in apps if not rSecuenciaNumérica.match(x)]
+        apps = [x for x in apps if rSecuenciaNumérica.match(x)]
+
+        if len(datos_inválidos) > 0:
+            print(
+                f"""
+{Fore.RED}Los siguientes datos ingresados no son validos y serán ignorados:{Fore.WHITE}
+{datos_inválidos}
+
+{Fore.BLUE}Para mas información visite:
+https://github.com/JLCareglio/Steam-Profit-Maker{Fore.WHITE}
+
+Presione una tecla para continuar..."""
+            )
+            msvcrt.getch()
 
         # while apps == "*":
         #     print(
@@ -88,8 +117,6 @@ def main():
 
         #     print(Style.BRIGHT + "\nPuede introducir varios ID separados por una ','")
         #     apps = input("Introduzca el App ID del juego: ")
-
-        apps = apps.replace(" ", "").split(",")
 
 
 main()

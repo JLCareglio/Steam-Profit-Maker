@@ -208,7 +208,7 @@ def multi(app_ids, cheap_list, average_list, noprofit):
             print(f"{Fore.WHITE}")
 
         print(
-            f"{Fore.BLUE}Nota: se guardo un informe con todos los datos de los juegos escaneados.\nPuedes encontrar el informe dentro de la carpeta data en un archivo .csv con la fecha actual"
+            f"{Fore.BLUE}Nota: se guardo un informe con todos los datos de los juegos escaneados.\nPuedes encontrar el informe dentro de la carpeta data en un archivo .csv con la fecha actual\n"
         )
 
     else:
