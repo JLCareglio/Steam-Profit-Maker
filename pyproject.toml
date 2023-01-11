@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "steam-profit-maker"
+version = "0.8.3"
+description = "Find profitable games from which trading cards or items fall whose value exceeds the cost of the game itself."
+authors = ["Jesús Lautaro Careglio Albornoz <j.l.careglio.albornoz@gmail.com>"]
+license = "GPL-3.0"
+readme = "README.md"
+packages = [{include = "steam_profit_maker"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+colorama = "^0.4.6"
+requests = "^2.28.1"
+bs4 = "^0.0.1"
+
+
+[tool.poetry.group.dev.dependencies]
+python-dotenv = "^0.21.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
