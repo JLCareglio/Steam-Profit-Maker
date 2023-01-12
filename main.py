@@ -1,4 +1,3 @@
-import msvcrt
 import os
 import re
 
@@ -97,7 +96,7 @@ def main():
         apps = [x for x in apps if rSecuenciaNumérica.match(x)]
 
         if len(datos_inválidos) > 0:
-            print(
+            input(
                 f"""
 {Fore.RED}Los siguientes datos ingresados no son validos y serán ignorados:{Fore.WHITE}
 {datos_inválidos}
@@ -105,9 +104,8 @@ def main():
 {Fore.BLUE}Para mas información visite:
 https://github.com/JLCareglio/Steam-Profit-Maker{Fore.WHITE}
 
-Presione una tecla para continuar..."""
+Pulse enter para continuar..."""
             )
-            msvcrt.getch()
 
         # while apps == "*":
         #     print(
