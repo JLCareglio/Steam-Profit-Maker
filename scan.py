@@ -3,6 +3,7 @@ import os
 from datetime import datetime
 
 from colorama import Back, Fore, Style, init
+from dotenv import load_dotenv
 
 import summary
 from alerts import check
@@ -11,12 +12,14 @@ from price_game import price_game
 from sorter import sort
 from summary import single
 
-# 	Variables Globales
 LINE_UP = "\033[1A"
 LINE_CLEAR = "\x1b[2K"
 
 
 def single_scan(app_id):
+
+    load_dotenv()  # take environment variables from .env.
+    API_KEY = os.getenv("PROXIESAPI_AUTH_KEY")
 
     os.system("clear")
     print("⏳ Espere un momento...", end="\r")
@@ -28,7 +31,7 @@ def single_scan(app_id):
         volume_list,
         success,
         game_name,
-    ) = price_ars(app_id, 1, 1)
+    ) = price_ars(app_id, 1, 1, API_KEY)
 
     if success == True:
 
@@ -131,6 +134,12 @@ def single_scan(app_id):
 
 
 def multi_scan(apps):
+    load_dotenv()  # take environment variables from .env.
+    API_KEY = os.getenv("PROXIESAPI_AUTH_KEY")
+    if API_KEY == None:
+        API_KEY = input(
+            f"{Fore.BLACK}\nSi tiene y quiere usar una api_Key de app.proxiesapi.com colócala a continuación, sino, solo pulse enter:\n{Fore.YELLOW}"
+        )
 
     bad_app_id = []
     app_data = {}
@@ -173,7 +182,7 @@ def multi_scan(apps):
                     volume_list,
                     success,
                     game_name,
-                ) = price_ars(app_id, len(apps), scanned_games)
+                ) = price_ars(app_id, len(apps), scanned_games, API_KEY)
 
                 for i in range(4):
                     print(LINE_UP, end=LINE_CLEAR)
@@ -277,10 +286,12 @@ def multi_scan(apps):
                     expensive_alert,
                 ]
 
-                # profit_máximo = (
-                #     (high_price_card - (high_price_card * 0.130433130433 - 0.01))
-                #     * cards_drop
-                # ) - game_price
+                alerts = (
+                    f"{sale_alert}{expensive_alert}".replace(Fore.GREEN, "")
+                    .replace(Fore.YELLOW, "")
+                    .replace(Fore.RED, "")
+                    .replace(Fore.WHITE, "")
+                )
 
                 writer.writerow(
                     [
@@ -293,7 +304,7 @@ def multi_scan(apps):
                         "%.2f" % (cheap_card - game_price),
                         "%.2f" % (expensive_card - game_price),
                         "%.2f" % (average - game_price),
-                        f"{sale_alert}{expensive_alert}",
+                        alerts,
                         price_cards,
                     ]
                 )

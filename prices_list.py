@@ -6,19 +6,15 @@ import urllib.parse
 import requests
 from bs4 import BeautifulSoup
 from colorama import Back, Fore, Style, init
-from dotenv import load_dotenv
 
 from get_hash import get_market_hash
 
 
-def prices_list(app_id, games_to_scan, scanned_games):
+def prices_list(app_id, games_to_scan, scanned_games, api_key):
 
     loaded_cards = 1
 
-    load_dotenv()  # take environment variables from .env.
     API_URL = os.getenv("API_ENDPOINT_URL")
-    AUTH_KEY = os.getenv("PROXIESAPI_AUTH_KEY")
-
     LINE_UP = "\033[1A"
     LINE_CLEAR = "\x1b[2K"
 
@@ -44,10 +40,10 @@ def prices_list(app_id, games_to_scan, scanned_games):
             "/", "-"
         )
 
-        if AUTH_KEY == None:
+        if api_key:
             datos = requests.get(url).content
         else:
-            PARAMS = {"auth_key": AUTH_KEY, "url": url}
+            PARAMS = {"auth_key": api_key, "url": url}
             datos = requests.get(url=API_URL, params=PARAMS).content
 
         soup = BeautifulSoup(datos, features="html.parser")
@@ -55,7 +51,7 @@ def prices_list(app_id, games_to_scan, scanned_games):
 
         points = "." * (loaded_cards % 4)
         card_name = card_hash.split("-", 1)[1]
-        proxy_text = "🕵️" if AUTH_KEY else ""
+        proxy_text = "🕵️" if api_key else ""
 
         # os.system('clear')
         for i in range(4):
