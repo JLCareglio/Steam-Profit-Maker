@@ -84,30 +84,31 @@ def prices_list(app_id, games_to_scan, scanned_games, api_key):
 
         try:
             success = card_json["success"]
-        except:
-            print("Problema con el cromo")
-            cant_line_clear += 1
-            time.sleep(1)
-            pass
-
-        if success == True:
-
             try:
                 price_card = card_json["lowest_price"]
             except:
                 price_card = "0"
-                print("Problema con el lowest_price")
-                cant_line_clear += 1
-                time.sleep(1)
+                # print("Problema con el lowest_price en: " + url)
+                # cant_line_clear += 1
+                # time.sleep(1)
+                success = False
 
             try:
                 volume = card_json["volume"]
             except:
                 volume = "0"
-                print("Problema con el Volumen")
-                cant_line_clear += 1
-                time.sleep(1)
+                # print("Problema con el Volumen en: " + url)
+                # cant_line_clear += 1
+                # time.sleep(1)
+                success = False
+        except:
+            # print("Problema con el cromo en: " + url)
+            # cant_line_clear += 1
+            # time.sleep(1)
+            success = False
+            pass
 
+        if success:
             prices += (price_card.replace(".", "").replace(",", "."),)
             volume_list += (volume,)
 
