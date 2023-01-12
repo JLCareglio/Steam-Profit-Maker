@@ -129,14 +129,14 @@ def single_scan(app_id):
             )
         )
         app_data = {}
-
+    print("")
     return app_data
 
 
 def multi_scan(apps):
     load_dotenv()  # take environment variables from .env.
     API_KEY = os.getenv("PROXIESAPI_AUTH_KEY")
-    if API_KEY == None:
+    if not API_KEY:
         API_KEY = input(
             f"{Fore.BLACK}\nSi tiene y quiere usar una api_Key de app.proxiesapi.com colócala a continuación, sino, solo pulse enter:\n{Fore.YELLOW}"
         )

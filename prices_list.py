@@ -14,7 +14,7 @@ def prices_list(app_id, games_to_scan, scanned_games, api_key):
 
     loaded_cards = 1
 
-    API_URL = os.getenv("API_ENDPOINT_URL")
+    API_URL = "http://api.proxiesapi.com"
     LINE_UP = "\033[1A"
     LINE_CLEAR = "\x1b[2K"
 
@@ -40,7 +40,7 @@ def prices_list(app_id, games_to_scan, scanned_games, api_key):
             "/", "-"
         )
 
-        if api_key:
+        if not api_key:
             datos = requests.get(url).content
         else:
             PARAMS = {"auth_key": api_key, "url": url}
@@ -53,7 +53,6 @@ def prices_list(app_id, games_to_scan, scanned_games, api_key):
         card_name = card_hash.split("-", 1)[1]
         proxy_text = "🕵️" if api_key else ""
 
-        # os.system('clear')
         for i in range(4):
             print(LINE_UP, end=LINE_CLEAR)
         cant_line_clear = 0
@@ -88,7 +87,7 @@ def prices_list(app_id, games_to_scan, scanned_games, api_key):
         except:
             print("Problema con el cromo")
             cant_line_clear += 1
-            time.sleep(0.5)
+            time.sleep(1)
             pass
 
         if success == True:
@@ -99,7 +98,7 @@ def prices_list(app_id, games_to_scan, scanned_games, api_key):
                 price_card = "0"
                 print("Problema con el lowest_price")
                 cant_line_clear += 1
-                time.sleep(0.5)
+                time.sleep(1)
 
             try:
                 volume = card_json["volume"]
@@ -107,7 +106,7 @@ def prices_list(app_id, games_to_scan, scanned_games, api_key):
                 volume = "0"
                 print("Problema con el Volumen")
                 cant_line_clear += 1
-                time.sleep(0.5)
+                time.sleep(1)
 
             prices += (price_card.replace(".", "").replace(",", "."),)
             volume_list += (volume,)

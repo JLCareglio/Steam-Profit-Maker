@@ -85,7 +85,7 @@ def main():
             + "Puede introducir varios juegos separandolos por coma ',' o espacios"
         )
         apps = input(f"Introduzca los AppIDs o las URLs de los juegos:{Fore.YELLOW}\n")
-
+        
         apps = re.sub(rEspaciosSobrantes, "", apps.replace(",", " ")).split(" ")
         apps = [
             rSecuenciaNumérica.search(x).group() if rSecuenciaNumérica.search(x) else x
