@@ -169,6 +169,7 @@ def multi_scan(apps):
                 "Profit Promedio",
                 "Comentarios",
                 "Precio de todos los cromos y su volumen de ventas",
+                "Fecha de Escaneo",
             ]
         )
 
@@ -293,6 +294,8 @@ def multi_scan(apps):
                     .replace(Fore.WHITE, "")
                 )
 
+                very_now = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+
                 writer.writerow(
                     [
                         game_name,
@@ -306,6 +309,7 @@ def multi_scan(apps):
                         "%.2f" % (average - game_price),
                         alerts,
                         price_cards,
+                        very_now,
                     ]
                 )
 
