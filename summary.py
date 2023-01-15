@@ -214,6 +214,18 @@ def multi(app_ids, cheap_list, average_list, noprofit):
     else:
         print("⛔ Ningún juego de la lista da profit.")
 
+    app_ids_error = [k for k, v in app_ids.items() if v[0] == None]
+    if len(app_ids_error) > 0:
+        print(
+            f"""{Fore.RED}
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+💥 Los siguientes {len(app_ids_error)} juegos no pudieron escanearse por un error critico:{Fore.YELLOW}
+"""
+        )
+        for app_id in app_ids_error:
+            print(app_id)
+        print("\n")
+
 
 # sale_alert = Fore.RED + '	ALERTA: Los cromos se venden muy poco (menos de 10 ventas en las ultimas 24 hs)' + Fore.WHITE
 # expensive_alert = '\n        ' + Fore.RED + 'ALERTA: El juego posee uno o mas cromos muy caros que no se venden.' + Fore.WHITE

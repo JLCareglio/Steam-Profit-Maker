@@ -82,7 +82,7 @@ def main():
         print(
             Style.BRIGHT
             + Fore.BLUE
-            + "Puede introducir varios juegos separandolos por coma ',' o espacios"
+            + "Puede introducir varios juegos separándoles por coma ',' o espacios"
         )
         apps = input(f"Introduzca los AppIDs o las URLs de los juegos:{Fore.YELLOW}\n")
         
