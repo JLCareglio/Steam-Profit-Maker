@@ -223,7 +223,7 @@ def multi(app_ids, cheap_list, average_list, noprofit):
 """
         )
         for app_id in app_ids_error:
-            print(app_id)
+            print(app_id, end=" ")
         print("\n")
 
 
