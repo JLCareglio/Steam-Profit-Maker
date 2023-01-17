@@ -94,7 +94,7 @@ def single(summary):
     return 0
 
 
-def multi(app_ids, cheap_list, average_list, noprofit):
+def multi(app_ids, cheap_list, average_list, no_profit_list, error_list):
 
     os.system("clear")
 
@@ -102,9 +102,9 @@ def multi(app_ids, cheap_list, average_list, noprofit):
 
         if len(cheap_list) > 0:
             print(
-                f"""        {Fore.GREEN}= = = = = = = = = = = = = = = = = = = = = = =
-        ✅ Los siguientes {len(cheap_list)} juegos dan profit seguro:
-        = = = = = = = = = = = = = = = = = = = = = = =\n"""
+                f"""        {Fore.GREEN}= = = = = = = = = = = = = = =
+        ✅ {len(cheap_list)} {"juegos dan" if len(cheap_list) > 1 else "juego da"} profit seguro:
+        = = = = = = = = = = = = = = =\n"""
             )
 
             for app_id in cheap_list:
@@ -144,9 +144,9 @@ def multi(app_ids, cheap_list, average_list, noprofit):
 
         if len(average_list) > 0:
             print(
-                f"""        {Fore.YELLOW}= = = = = = = = = = = = = = = = = = = = = = =
-        👀 Los siguientes {len(average_list)} juegos pueden dar profit:
-        = = = = = = = = = = = = = = = = = = = = = = =\n"""
+                f"""        {Fore.YELLOW}= = = = = = = = = = = = = = =
+        👀 {len(average_list)} {"juegos pueden" if len(average_list) > 1 else "juego puede"} dar profit:
+        = = = = = = = = = = = = = = =\n"""
             )
 
             for app_id in average_list:
@@ -183,14 +183,14 @@ def multi(app_ids, cheap_list, average_list, noprofit):
             for i in range(2):
                 print(LINE_UP, end=LINE_CLEAR)
 
-        if len(noprofit) > 0:
+        if len(no_profit_list) > 0:
             print(
-                f"""        {Fore.RED}= = = = = = = = = = = = = = = = = = = = = = =
-        ⛔ Los siguientes {len(noprofit)} juegos no dan profit:
-        = = = = = = = = = = = = = = = = = = = = = = ={Fore.WHITE}\n"""
+                f"""        {Fore.RED}= = = = = = = = = = = = = = =
+        ⛔ {len(no_profit_list)} {"juegos no dan" if len(average_list) > 1 else "juego no da"} profit:
+        = = = = = = = = = = = = = = ={Fore.WHITE}\n"""
             )
 
-            for app_id in noprofit:
+            for app_id in no_profit_list:
                 (
                     game_name,
                     game_price,
@@ -214,17 +214,38 @@ def multi(app_ids, cheap_list, average_list, noprofit):
     else:
         print("⛔ Ningún juego de la lista da profit.")
 
-    app_ids_error = [k for k, v in app_ids.items() if v[0] == None]
-    if len(app_ids_error) > 0:
+    if len(error_list) > 0:
         print(
             f"""{Fore.RED}
-* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-💥 Los siguientes {len(app_ids_error)} juegos no pudieron escanearse por un error critico:{Fore.YELLOW}
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+💥 {len(error_list)} {"juegos no pudieron" if len(error_list) > 1 else "juego no pudo"} escanearse por un error critico:"""
+        )
+
+        for app_id in error_list:
+            (
+                game_name,
+                game_price,
+                cards_drop,
+                price_cards,
+                average,
+                cheap_card,
+                cheap_profit,
+                average_profit,
+                sale_alert,
+                expensive_alert,
+            ) = app_ids[app_id]
+
+            print(f"{Fore.YELLOW}{app_id}", end=" ")
+
+        print(
+            f"""
+
+{Fore.BLUE}💡 Para resolver el problema intente activar o cambiar de Proxy o VPN
+📬 Si lo anterior no funciona, póngase en contacto con el desarrollador creando una issue en:
+{Fore.WHITE}https://github.com/JLCareglio/Steam-Profit-Maker/issues
+{Fore.RED}* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 """
         )
-        for app_id in app_ids_error:
-            print(app_id, end=" ")
-        print("\n")
 
 
 # sale_alert = Fore.RED + '	ALERTA: Los cromos se venden muy poco (menos de 10 ventas en las ultimas 24 hs)' + Fore.WHITE

@@ -31,7 +31,8 @@ def sort_profit(apps):
 
     cheap_list = []
     average_list = []
-    noprofit = []
+    no_profit_list = []
+    error_list = []
 
     for app_id in apps:
         (
@@ -54,10 +55,13 @@ def sort_profit(apps):
             elif average - game_price > 0:
                 average_list.append(app_id)
 
+            elif game_name == None:
+                error_list.append(app_id)
+
             else:
-                noprofit.append(app_id)
+                no_profit_list.append(app_id)
 
         except:
             pass
 
-    return cheap_list, average_list, noprofit
+    return cheap_list, average_list, no_profit_list, error_list

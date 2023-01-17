@@ -124,9 +124,13 @@ def single_scan(app_id):
 
     else:
         print(
-            "\nEl ID {} no tiene cromos/no existe en SteamCardExchange o genero algun error, introduzca otro.".format(
-                app_id
-            )
+            f"""{Fore.RED}
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+💥 El ID {Fore.YELLOW}{app_id}{Fore.RED} no pudo escanearse por un error critico
+{Fore.BLUE}💡 Para resolver el problema intente activar o cambiar de Proxy o VPN
+📬 Si lo anterior no funciona, póngase en contacto con el desarrollador creando una issue en:
+{Fore.WHITE}https://github.com/JLCareglio/Steam-Profit-Maker/issues
+{Fore.RED}* * * * * * * * * * * * * * * * * * * * * * * * * * * * *"""
         )
         app_data = {}
     print("")

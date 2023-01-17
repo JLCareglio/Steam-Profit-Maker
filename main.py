@@ -73,9 +73,9 @@ def main():
             app_ids = {}
             app_ids.update(multi_scan(apps))
 
-            cheap_list, average_list, noprofit = sort_profit(app_ids)
+            cheap_list, average_list, no_profit_list, error_list = sort_profit(app_ids)
 
-            multi(app_ids, cheap_list, average_list, noprofit)
+            multi(app_ids, cheap_list, average_list, no_profit_list, error_list)
 
             lista_apps.update(app_ids)
 
