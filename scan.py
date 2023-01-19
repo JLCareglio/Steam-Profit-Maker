@@ -53,7 +53,7 @@ def single_scan(app_id):
             expensive_alert = (
                 "\n"
                 + Fore.RED
-                + ">ALERTA: El juego posee uno o mas cromos muy caros que no se venden."
+                + "*Tiene uno o mas cromos muy caros que no se venden."
                 + Fore.WHITE
             )
 
@@ -216,7 +216,7 @@ def multi_scan(apps):
                     expensive_alert = (
                         "\n"
                         + Fore.RED
-                        + ">ALERTA: El juego posee uno o mas cromos muy caros que no se venden."
+                        + "*Tiene uno o mas cromos muy caros que no se venden."
                         + Fore.WHITE
                     )
 

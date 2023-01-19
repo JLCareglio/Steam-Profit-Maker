@@ -50,18 +50,18 @@ def check(price_list, volume_list):
     if sales_flow < 10:
         sales = (
             Fore.RED
-            + ">ALERTA: Los cromos se venden muy poco (menos de 10 ventas en las ultimas 24 hs)"
+            + "*Cromos se venden muy poco (menos de 10 ventas en las ultimas 24 hs)"
             + Fore.WHITE
         )
 
     elif sales_flow >= 10 and sales_flow <= 50:
-        sales = Fore.YELLOW + "Los cromos tienen algunas ventas" + Fore.WHITE
+        sales = Fore.YELLOW + "Cromos tienen algunas ventas" + Fore.WHITE
 
     elif sales_flow > 50 and sales_flow < 200:
-        sales = Fore.GREEN + "Los cromos se venden con frecuencia" + Fore.WHITE
+        sales = Fore.GREEN + "Cromos se venden con frecuencia" + Fore.WHITE
 
     else:
-        sales = Fore.GREEN + "Los cromos se venden sin problemas" + Fore.WHITE
+        sales = Fore.GREEN + "Cromos se venden sin problemas" + Fore.WHITE
 
     return expensive, sales
 
