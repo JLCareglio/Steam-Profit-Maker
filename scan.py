@@ -19,7 +19,7 @@ LINE_CLEAR = "\x1b[2K"
 def single_scan(app_id):
 
     load_dotenv()  # take environment variables from .env.
-    API_KEY = os.getenv("PROXIESAPI_AUTH_KEY")
+    api_key = os.getenv("PROXIESAPI_AUTH_KEY")
 
     os.system("clear")
     print("⏳ Espere un momento...", end="\r")
@@ -31,7 +31,7 @@ def single_scan(app_id):
         volume_list,
         success,
         game_name,
-    ) = price_ars(app_id, 1, 1, API_KEY)
+    ) = price_ars(app_id, 1, 1, api_key)
 
     if success == True:
 
@@ -129,7 +129,7 @@ def single_scan(app_id):
 💥 El ID {Fore.YELLOW}{app_id}{Fore.RED} no pudo escanearse por un error critico
 {Fore.BLUE}💡 Para resolver el problema intente activar o cambiar de Proxy o VPN
 📬 Si lo anterior no funciona, póngase en contacto con el desarrollador creando una issue en:
-{Fore.WHITE}https://github.com/JLCareglio/Steam-Profit-Maker/issues
+{Fore.GREEN}https://github.com/JLCareglio/Steam-Profit-Maker/issues
 {Fore.RED}* * * * * * * * * * * * * * * * * * * * * * * * * * * * *"""
         )
         app_data = {}
@@ -139,10 +139,12 @@ def single_scan(app_id):
 
 def multi_scan(apps):
     load_dotenv()  # take environment variables from .env.
-    API_KEY = os.getenv("PROXIESAPI_AUTH_KEY")
-    if not API_KEY:
-        API_KEY = input(
-            f"{Fore.BLACK}\nSi tiene y quiere usar una api_Key de app.proxiesapi.com colócala a continuación, sino, solo pulse enter:\n{Fore.YELLOW}"
+    api_key = os.getenv("PROXIESAPI_AUTH_KEY")
+    if not api_key:
+        api_key = input(
+            f"""
+{Fore.WHITE}Si tiene y quiere usar una api_Key de {Fore.GREEN}https://app.proxiesapi.com/{Fore.WHITE} colóquela a continuación, sino, solo pulse enter para continuar:
+{Fore.YELLOW}"""
         )
 
     bad_app_id = []
@@ -187,7 +189,7 @@ def multi_scan(apps):
                     volume_list,
                     success,
                     game_name,
-                ) = price_ars(app_id, len(apps), scanned_games, API_KEY)
+                ) = price_ars(app_id, len(apps), scanned_games, api_key)
 
                 for i in range(4):
                     print(LINE_UP, end=LINE_CLEAR)

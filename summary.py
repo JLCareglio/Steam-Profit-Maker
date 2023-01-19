@@ -242,7 +242,7 @@ def multi(app_ids, cheap_list, average_list, no_profit_list, error_list):
 
 {Fore.BLUE}💡 Para resolver el problema intente activar o cambiar de Proxy o VPN
 📬 Si lo anterior no funciona, póngase en contacto con el desarrollador creando una issue en:
-{Fore.WHITE}https://github.com/JLCareglio/Steam-Profit-Maker/issues
+{Fore.GREEN}https://github.com/JLCareglio/Steam-Profit-Maker/issues
 {Fore.RED}* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 """
         )

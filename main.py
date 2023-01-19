@@ -102,7 +102,7 @@ def main():
 {datos_inválidos}
 
 {Fore.BLUE}Para mas información visite:
-https://github.com/JLCareglio/Steam-Profit-Maker{Fore.WHITE}
+{Fore.GREEN}https://github.com/JLCareglio/Steam-Profit-Maker{Fore.WHITE}
 
 Pulse enter para continuar..."""
             )
