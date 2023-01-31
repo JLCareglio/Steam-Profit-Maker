@@ -1,11 +1,67 @@
+<p align="center">
+  <img width="160" height="160" alt="CacheLib" src="https://em-content.zobj.net/thumbs/160/microsoft/319/coin_1fa99.png">
+</p>
 <h1 align="center"> SPM - Steam Profit Maker </h1>
 <p align="left">
-<img src="https://img.shields.io/badge/license-GPL-blue">
+  <img src="https://img.shields.io/badge/license-GPL-blue">
+  <img src="https://img.shields.io/badge/poetry-1.3-60A5FA?logo=poetry&color=60A5FA">
+  <img src="https://img.shields.io/badge/python-v^3.9-3776AB?logo=python&color=3776AB">
+  <img src="https://img.shields.io/badge/release%20date-pending-yellow">
+  <img src="https://img.shields.io/badge/status-in%20development-yellow">
+  <br>
+  <img src="https://img.shields.io/github/stars/JLCareglio?style=social">
 </p>
 
-Introduces el appid de algun juego de steam y analizara las cartas del mismo en el mercado, dando datos detallados sobre si sale rentable o no, con promedios y alertas
+## Índice
+* [Índice](#índice)
+* [Descripción](#descripción)
+* [Requisitos](#requisitos)
+* [Primeros pasos](#primeros-pasos)
+* [Ejemplo de uso](#ejemplo-de-uso)
 
-Busca ofertas de juegos que tengan cromos y copia sus URLs o AppIDs, puedes encontrar una lista actualizada en la siguiente pagina:
+## Descripción
+<p>
+  Herramienta para encontrar juegos rentables en Steam donde el precio de sus cromos supere el coste del propio producto 📈.
+  <br>
+  🤔 ¿Como funciona?, simple, solo introduces uno o varios AppIDs o URLs de juegos de steam y analizara los cromos del mismo en el mercado para luego dar datos detallados sobre si su compra es rentable, posibles ganancias y comentarios utiles 💪.
+  <img src="https://user-images.githubusercontent.com/23004689/215903955-2bd0bf4f-83b9-4f22-a763-0a0687dd1643.png">
+</p>
+
+## Requisitos
+- Python v3.9 o superior
+- Tener instaladas las siguientes librerias:
+  - beautifulsoup4
+  - bs4
+  - certifi
+  - charset-normalizer
+  - colorama
+  - idna
+  - python-dotenv
+  - requests
+  - soupsieve
+  - urllib3
+ - Terminal UNIX o PowerShell
+
+Puedes usar el siguiente comando para instalar todas las librerias mensionadas:
+```
+pip3 install beautifulsoup4 bs4 certifi charset-normalizer colorama idna python-dotenv requests soupsieve urllib3
+```
+
+## Primeros pasos
+1. Primero asegurate de cumplir con los [requisitos](#requisitos)
+2. Clona el repositorio y abrelo desde una terminal compatible
+```
+git clone --depth 1 https://github.com/JLCareglio/Steam-Profit-Maker.git
+cd ./Steam-Profit-Maker
+```
+3. Ejecuta main.py usando python 3.9 o superior
+```
+python3 main.py
+```
+
+## Ejemplo de uso
+
+Busca ofertas de juegos que tengan cromos y guarda sus URLs o AppIDs, puedes encontrar una lista actualizada en la siguiente pagina:
 [https://steamdb.info/sales/?min_reviews=0&min_rating=0&min_discount=0&category=29](https://steamdb.info/sales/?min_reviews=0&min_rating=0&min_discount=0&category=29)
 
 Ingresa los juegos encontrados en el programa, ejemplo:
