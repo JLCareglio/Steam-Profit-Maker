@@ -23,13 +23,13 @@
 <p>
   Herramienta para encontrar juegos rentables en Steam donde el precio de sus cromos supere el coste del propio producto 📈.
   <br>
-  🤔 ¿Como funciona?, simple, solo introduces uno o varios AppIDs o URLs de juegos de steam y analizara los cromos del mismo en el mercado para luego dar datos detallados sobre si su compra es rentable, posibles ganancias y comentarios utiles 💪.
+  🤔 ¿Cómo funciona?, simple, solo introduces uno o varios AppIDs o URLs de juegos de steam y analizará los cromos del mismo en el mercado para luego dar datos detallados sobre si su compra es rentable, posibles ganancias y comentarios útiles 💪.
   <img src="https://user-images.githubusercontent.com/23004689/215903955-2bd0bf4f-83b9-4f22-a763-0a0687dd1643.png">
 </p>
 
 ## Requisitos
 - Python v3.9 o superior
-- Tener instaladas las siguientes librerias:
+- Siguientes librerias de Python:
   - beautifulsoup4
   - bs4
   - certifi
@@ -40,43 +40,49 @@
   - requests
   - soupsieve
   - urllib3
- - Terminal UNIX o PowerShell
 
-Puedes usar el siguiente comando para instalar todas las librerias mensionadas:
+Puedes usar el siguiente comando para instalar todas las librerías mencionadas:
 ```
 pip3 install beautifulsoup4 bs4 certifi charset-normalizer colorama idna python-dotenv requests soupsieve urllib3
 ```
 
 ## Primeros pasos
-1. Primero asegurate de cumplir con los [requisitos](#requisitos)
-2. Clona el repositorio y abrelo desde una terminal compatible
+1. Primero asegúrate de cumplir con los [requisitos](#requisitos)
+2. Clona el repositorio y ábrelo desde una terminal (shell, bash, powershell, etc)
 ```
 git clone --depth 1 https://github.com/JLCareglio/Steam-Profit-Maker.git
 cd ./Steam-Profit-Maker
 ```
-3. Ejecuta main.py usando python 3.9 o superior
+3. Ejecuta main.py usando Python 3.9 o superior
 ```
 python3 main.py
 ```
 
 ## Ejemplo de uso
 
-Busca ofertas de juegos que tengan cromos y guarda sus URLs o AppIDs, puedes encontrar una lista actualizada en la siguiente pagina:
-[https://steamdb.info/sales/?min_reviews=0&min_rating=0&min_discount=0&category=29](https://steamdb.info/sales/?min_reviews=0&min_rating=0&min_discount=0&category=29)
-
-Ingresa los juegos encontrados en el programa, ejemplo:
-![Ingreso_Juegos](https://user-images.githubusercontent.com/23004689/211580693-bdda7b17-b752-425c-aad9-e5d30e9b81b7.png)
-
-El programa cargara datos de cada una de las cartas (tarda un ratito, por cuestiones que Steam permite una cierta cantidad de solicitudes por minuto, y si se exceden no te permite ingresar a la pagina de steam por unos minutos) el programa tiene el delay necesario para que esto no ocurra, una vez introducido el app ID cargara las cartas
-![Escaneo_Juegos](https://user-images.githubusercontent.com/23004689/211580984-308b6401-0b51-46df-a2fc-ecb0c62de7a6.png)
-
-A medida que los juegos sean escaneados se van a ir mostrando y guardando sus datos
-![Escaneo_Juegos_datos](https://user-images.githubusercontent.com/23004689/211581470-abb5af87-ba17-41d1-a2c8-82c253335251.png)
-Para cada juego se mostraran algunos avisos y advertencias en caso de que tengan cromos que no se venden.
-
-Cuando termine, veras un resumen completo con los datos extraidos, estaran ordenados en las siguientes 3 categorias:
-![Resumen_Positivo](https://user-images.githubusercontent.com/23004689/211585266-40abdb15-d9fb-4e9c-81d8-848737aaeaa2.png)
-![Resumen_Normal](https://user-images.githubusercontent.com/23004689/211585293-b799a919-6afb-4e5c-b857-36061b108646.png)
-![Resumen_Negativo](https://user-images.githubusercontent.com/23004689/211585347-2a34a5d0-0300-4a33-8927-bbd1cebce043.png)
-
-Tambien encontraras un informe dentro de la carpeta data en un archivo .csv con la fecha actual en la que comenzaste el escaneo de juegos. Puedes abrir y ver este archivo con algun programa como "Hojas de Calculo de Google".
+<p>
+  Puedes buscar ofertas de juegos que tengan cromos y guarda sus URLs o AppIDs, usando la siguiente página: 👇
+  <br>
+  https://steamdb.info/sales/?min_reviews=0&min_rating=0&min_discount=0&category=29
+</p>
+<p>
+  Luego de abrir el programa ingresa los juegos de los que quieras saber su rentabilidad, este es un ejemplo con 8 juegos introducidos de formas diferentes pero todas válidas:
+  <br>
+  <img src="https://user-images.githubusercontent.com/23004689/216166787-52e2303f-b397-4d55-b028-6c1ec28e59e0.png">
+</p>
+<p>
+  Al pulsar enter empezará el escaneo de los cromos de cada juego, ahora solo toca esperar a que termine 👏.
+  <br>
+  Nota: se van a ir mostrando y guardando datos y avisos útiles sobre la rentabilidad de cada juego a medida que se escaneen 👀💾:
+  <br>
+  <img src="https://user-images.githubusercontent.com/23004689/216167513-8a601318-7894-437c-807a-302794861051.png">
+</p>
+<p>
+  Cuando terminen todos los escaneos, verás un resumen completo con los datos extraídos y ordenados en 3 categorías como las siguientes:
+  <br>
+  <img src="https://user-images.githubusercontent.com/23004689/216172113-3a2519ee-43b3-41ab-8ed9-d2f41205bee6.png">
+  <img src="https://user-images.githubusercontent.com/23004689/216172220-81bb4c7b-f2a5-4b10-b719-06a8baa77398.png">
+  <img src="https://user-images.githubusercontent.com/23004689/216172279-c4f14066-24f4-47eb-b038-bf98c265c316.png">
+  <br>
+  También encontrarás un informe dentro de la carpeta data en un archivo .csv con la fecha actual en la que comenzaste el escaneo de juegos. Puedes abrir y ver este archivo con algún programa como "Hojas de Cálculo de Google" 😉.
+</p>
