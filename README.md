@@ -20,9 +20,9 @@
 * [👀 Ejemplo de Uso](#ejemplo-de-uso)
 * [💥 Posibles Errores](#posibles-errores)
 * [❤️ Contribuciones](#contribuciones)
-  * [🧑‍💻 Aporta Programando]()
-  * [🗨️ Aporta Traduciendo]()
-  * [🪙 Aporta Economicamente]()
+  * [🧑‍💻 Aporta Programando](#aporta-programando)
+  * [🗨️ Aporta Traduciendo](#aporta-traduciendo)
+  * [🪙 Aporta Económicamente](#aporta-económicamente)
 
 ## Descripción
 <p>
