@@ -13,11 +13,16 @@
 </p>
 
 ## Índice
-* [Índice](#índice)
-* [Descripción](#descripción)
-* [Requisitos](#requisitos)
-* [Primeros pasos](#primeros-pasos)
-* [Ejemplo de uso](#ejemplo-de-uso)
+* [📝 Índice](#índice)
+* [ℹ️ Descripción](#descripción)
+* [🔎 Requisitos](#requisitos)
+* [🐾 Primeros Pasos](#primeros-pasos)
+* [👀 Ejemplo de Uso](#ejemplo-de-uso)
+* [💥 Posibles Errores](#posibles-errores)
+* [❤️ Contribuciones](#contribuciones)
+  * [🧑‍💻 Aporta Programando]()
+  * [🗨️ Aporta Traduciendo]()
+  * [🪙 Aporta Economicamente]()
 
 ## Descripción
 <p>
@@ -28,7 +33,7 @@
 </p>
 
 ## Requisitos
-- Python v3.9 o superior
+- [Python v3.9 o superior](https://www.python.org/downloads/)
 - Siguientes librerias de Python:
   - beautifulsoup4
   - bs4
@@ -46,9 +51,9 @@ Puedes usar el siguiente comando para instalar todas las librerías mencionadas:
 pip3 install beautifulsoup4 bs4 certifi charset-normalizer colorama idna python-dotenv requests soupsieve urllib3
 ```
 
-## Primeros pasos
+## Primeros Pasos
 1. Primero asegúrate de cumplir con los [requisitos](#requisitos)
-2. Clona el repositorio y ábrelo desde una terminal (shell, bash, powershell, etc)
+2. Clona el repositorio y ábrelo desde una terminal (shell, bash, zsh, powershell, etc)
 ```
 git clone --depth 1 https://github.com/JLCareglio/Steam-Profit-Maker.git
 cd ./Steam-Profit-Maker
@@ -58,7 +63,7 @@ cd ./Steam-Profit-Maker
 python3 main.py
 ```
 
-## Ejemplo de uso
+## Ejemplo de Uso
 
 <p>
   Puedes buscar ofertas de juegos que tengan cromos y guarda sus URLs o AppIDs, usando la siguiente página: 👇
@@ -73,7 +78,7 @@ python3 main.py
 <p>
   Al pulsar enter empezará el escaneo de los cromos de cada juego, ahora solo toca esperar a que termine 👏.
   <br>
-  Nota: se van a ir mostrando y guardando datos y avisos útiles sobre la rentabilidad de cada juego a medida que se escaneen 👀💾:
+  ℹ️ Nota: se van a ir mostrando y guardando datos y avisos útiles sobre la rentabilidad de cada juego a medida que se escaneen 👀💾:
   <br>
   <img src="https://user-images.githubusercontent.com/23004689/216167513-8a601318-7894-437c-807a-302794861051.png">
 </p>
@@ -86,3 +91,36 @@ python3 main.py
   <br>
   También encontrarás un informe dentro de la carpeta data en un archivo .csv con la fecha actual en la que comenzaste el escaneo de juegos. Puedes abrir y ver este archivo con algún programa como "Hojas de Cálculo de Google" 😉.
 </p>
+
+## Posibles Errores
+<p>
+  🔴 Puede que algunos juegos no consigan ser escaneados ni aun activando o cambiando de Proxy o VPN, estos aparecerán listados en último lugar dentro del resumen al finalizar todos los escaneos de juegos, ejemplo de un error:
+  <br>
+  <img src="https://user-images.githubusercontent.com/23004689/216780380-3b6b566f-072f-4bed-a324-473600c6e9ce.png">
+  <br>
+  ℹ️ Nota: los juegos que produzcan errores bajo ninguna circunstancia afectaran a aquellos que si fueron escaneados correctamente ni tampoco deberían detener la aplicación, si esto ocurre, por favor reportarlo en <a href="https://github.com/JLCareglio/Steam-Profit-Maker/issues">issues</a>.
+</p>
+
+🟢 Posibles soluciones
+- Intentar volver a escanear los juegos que dieron errores pero en otro día u horario.
+- Reinstalar o actualizar las librerías listadas en [🔎 Requisitos](#requisitos).
+- No utilizar ninguna VPN o Proxy.
+- Ejecutar el programa desde una terminal diferente como por ejemplo [GitBash](https://git-scm.com/downloads) o PowerShell.
+
+🔵 Si el problema persiste, por favor reportarlo creando una nueva issue en:
+https://github.com/JLCareglio/Steam-Profit-Maker/issues
+
+## Contribuciones
+🚧 Sección en construcción 🚧.
+[Esto significa que el texto a continuación está incompleto y será actualizado en un futuro]
+
+### Aporta Programando
+El proyecto acepta contribuciones por lo que siéntete libre de hacer un [Forck](https://github.com/JLCareglio/Steam-Profit-Maker/fork) al mismo para poder modificarlo aportando solución a errores o nuevas características.
+- Formatear codigo con [Black](https://black.readthedocs.io/en/stable/getting_started.html)
+- Usar convenciones dadas por [GitMoji](https://gitmoji.dev/) para los commits (recomendado)
+
+### Aporta Traduciendo
+Aún se está considerando si tiene sentido traducir el proyecto o localizarlo para las monedas de más países, ya que actualmente solamente funciona en Argentina y personalmente desconozco si es posible conseguir un profit positivo con juegos fuera de este país.
+
+### Aporta Económicamente
+🚧 Sección en construcción 🚧
