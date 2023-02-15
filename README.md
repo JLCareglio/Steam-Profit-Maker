@@ -19,10 +19,7 @@
 * [🐾 Primeros Pasos](#primeros-pasos)
 * [👀 Ejemplo de Uso](#ejemplo-de-uso)
 * [💥 Posibles Errores](#posibles-errores)
-* [❤️ Contribuciones](#contribuciones)
-  * [🧑‍💻 Aporta Programando](#aporta-programando)
-  * [🗨️ Aporta Traduciendo](#aporta-traduciendo)
-  * [🪙 Aporta Económicamente](#aporta-económicamente)
+* [🧑‍💻 Contribuye programando](#contribuye-programando)
 
 ## Descripción
 <p>
@@ -104,23 +101,14 @@ python3 main.py
 🟢 Posibles soluciones
 - Intentar volver a escanear los juegos que dieron errores pero en otro día u horario.
 - Reinstalar o actualizar las librerías listadas en [🔎 Requisitos](#requisitos).
-- No utilizar ninguna VPN o Proxy.
+- Prueba no utilizar ninguna VPN o Proxy.
 - Ejecutar el programa desde una terminal diferente como por ejemplo [GitBash](https://git-scm.com/downloads) o PowerShell.
 
 🔵 Si el problema persiste, por favor reportarlo creando una nueva issue en:
 https://github.com/JLCareglio/Steam-Profit-Maker/issues
 
-## Contribuciones
-🚧 Sección en construcción 🚧.
-[Esto significa que el texto a continuación está incompleto y será actualizado en un futuro]
+## Contribuye programando
 
-### Aporta Programando
-El proyecto acepta contribuciones por lo que siéntete libre de hacer un [Forck](https://github.com/JLCareglio/Steam-Profit-Maker/fork) al mismo para poder modificarlo aportando solución a errores o nuevas características.
+🧑‍💻 El proyecto acepta contribuciones, por lo que siéntete libre de hacer un [Forck](https://github.com/JLCareglio/Steam-Profit-Maker/fork) al mismo para poder modificarlo aportando solución a errores o nuevas características.
 - Formatear codigo con [Black](https://black.readthedocs.io/en/stable/getting_started.html)
 - Usar convenciones dadas por [GitMoji](https://gitmoji.dev/) para los commits (recomendado)
-
-### Aporta Traduciendo
-Aún se está considerando si tiene sentido traducir el proyecto o localizarlo para las monedas de más países, ya que actualmente solamente funciona en Argentina y personalmente desconozco si es posible conseguir un profit positivo con juegos fuera de este país.
-
-### Aporta Económicamente
-🚧 Sección en construcción 🚧
