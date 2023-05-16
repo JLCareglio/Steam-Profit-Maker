@@ -12,9 +12,7 @@ def price_ars(app_id, games_to_scan, scanned_games, api_key):
     cards_drop = math.ceil(cards / 2)
 
     if success == True:
-
         for price in price_list:
-
             price_cards += float(price.replace("ARS$ ", ""))
 
     return price_cards, cards_drop, cards, price_list, volume_list, success, game_name

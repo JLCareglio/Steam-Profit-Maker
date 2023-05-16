@@ -22,8 +22,9 @@ def prices_list(app_id, games_to_scan, scanned_games, api_key):
         market_hash, cards, game_name = get_market_hash(
             app_id, scanned_games, games_to_scan
         )
-
-    except:
+    except Exception as e:
+        print(e)
+        input("pulse enter para continuar")
         market_hash = []
         cards = 0
         game_name = None
