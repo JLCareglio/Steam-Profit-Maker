@@ -6,8 +6,6 @@
   <img src="https://img.shields.io/badge/license-GPL-blue">
   <img src="https://img.shields.io/badge/poetry-1.3-60A5FA?logo=poetry&color=60A5FA">
   <img src="https://img.shields.io/badge/python-v^3.9-3776AB?logo=python&color=3776AB">
-  <img src="https://img.shields.io/badge/release%20date-pending-yellow">
-  <img src="https://img.shields.io/badge/status-in%20development-yellow">
   <br>
   <img src="https://img.shields.io/github/stars/JLCareglio?style=social">
 </p>
