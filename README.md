@@ -1,6 +1,7 @@
 <p align="center">
-  <img width="160" height="160" alt="CacheLib" src="https://em-content.zobj.net/thumbs/160/microsoft/319/coin_1fa99.png">
+  <img width="256" alt="CacheLib" src="https://github.com/JLCareglio/Steam-Profit-Maker/assets/23004689/7a2f7e2e-c469-4843-a223-56d8c946e98d">
 </p>
+
 <h1 align="center"> SPM - Steam Profit Maker </h1>
 <p align="left">
   <img src="https://img.shields.io/badge/license-GPL-blue">
