@@ -300,7 +300,7 @@ def multi_scan(apps):
                     .replace(Fore.WHITE, "")
                 )
 
-                very_now = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+                very_now = datetime.now().strftime("%d %b %Y %H:%M:%S")
 
                 writer.writerow(
                     [
