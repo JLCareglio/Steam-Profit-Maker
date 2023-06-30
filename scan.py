@@ -17,9 +17,8 @@ LINE_CLEAR = "\x1b[2K"
 
 
 def single_scan(app_id):
-
-    load_dotenv()  # take environment variables from .env.
-    api_key = os.getenv("PROXIESAPI_AUTH_KEY")
+    # load_dotenv()  # take environment variables from .env.
+    # api_key = os.getenv("PROXIESAPI_AUTH_KEY")
 
     os.system("clear")
     print("⏳ Espere un momento...", end="\r")
@@ -31,10 +30,9 @@ def single_scan(app_id):
         volume_list,
         success,
         game_name,
-    ) = price_ars(app_id, 1, 1, api_key)
+    ) = price_ars(app_id, 1, 1)
 
     if success == True:
-
         fees = 0.874
         expensive_alert = ""
         price_cards = "|| "
@@ -45,9 +43,7 @@ def single_scan(app_id):
         high_price_card = float(price_list[-1][5:]) if price_list[-1][5:] else 0.0
 
         if expensive_cards > 0:
-
             for i in range(1, expensive_cards + 1):
-
                 price_total -= float(price_list[-i][5:])
 
             expensive_alert = (
@@ -138,14 +134,14 @@ def single_scan(app_id):
 
 
 def multi_scan(apps):
-    load_dotenv()  # take environment variables from .env.
-    api_key = os.getenv("PROXIESAPI_AUTH_KEY")
-    if not api_key:
-        api_key = input(
-            f"""
-{Fore.WHITE}Si tiene y quiere usar una api_Key de {Fore.GREEN}https://app.proxiesapi.com/{Fore.WHITE} colóquela a continuación, sino, solo pulse enter para continuar:
-{Fore.YELLOW}"""
-        )
+    #     load_dotenv()  # take environment variables from .env.
+    #     api_key = os.getenv("PROXIESAPI_AUTH_KEY")
+    #     if not api_key:
+    #         api_key = input(
+    #             f"""
+    # {Fore.WHITE}Si tiene y quiere usar una api_Key de {Fore.GREEN}https://app.proxiesapi.com/{Fore.WHITE} colóquela a continuación, sino, solo pulse enter para continuar:
+    # {Fore.YELLOW}"""
+    #         )
 
     bad_app_id = []
     app_data = {}
@@ -189,7 +185,7 @@ def multi_scan(apps):
                     volume_list,
                     success,
                     game_name,
-                ) = price_ars(app_id, len(apps), scanned_games, api_key)
+                ) = price_ars(app_id, len(apps), scanned_games)
 
                 for i in range(4):
                     print(LINE_UP, end=LINE_CLEAR)
@@ -201,7 +197,6 @@ def multi_scan(apps):
             scanned_games += 1
 
             if success == True:
-
                 fees = 0.874
                 expensive_alert = ""
                 price_cards = "|| "
@@ -210,9 +205,7 @@ def multi_scan(apps):
                 expensive_cards, sale_alert = check(price_list, volume_list)
 
                 if expensive_cards > 0:
-
                     for i in range(1, expensive_cards + 1):
-
                         price_total -= float(price_list[-i][5:])
 
                     expensive_alert = (
@@ -331,7 +324,6 @@ def multi_scan(apps):
                 app_data[app_id] = (None, 0, 0, 0, 0, 0, 0, 0, "", "")
 
     if len(bad_app_id) > 0:
-
         bad_id_string = ""
 
         for app_id in bad_app_id:

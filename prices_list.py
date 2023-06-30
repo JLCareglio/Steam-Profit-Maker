@@ -10,11 +10,10 @@ from colorama import Back, Fore, Style, init
 from get_hash import get_market_hash
 
 
-def prices_list(app_id, games_to_scan, scanned_games, api_key):
-
+def prices_list(app_id, games_to_scan, scanned_games):
     loaded_cards = 1
 
-    API_URL = "http://api.proxiesapi.com"
+    # API_URL = "http://api.proxiesapi.com"
     LINE_UP = "\033[1A"
     LINE_CLEAR = "\x1b[2K"
 
@@ -41,24 +40,26 @@ def prices_list(app_id, games_to_scan, scanned_games, api_key):
             "/", "-"
         )
 
-        if not api_key:
-            datos = requests.get(url).content
-        else:
-            PARAMS = {"auth_key": api_key, "url": url}
-            datos = requests.get(url=API_URL, params=PARAMS).content
+        # if not api_key:
+        #     datos = requests.get(url).content
+        # else:
+        #     PARAMS = {"auth_key": api_key, "url": url}
+        #     datos = requests.get(url=API_URL, params=PARAMS).content
+
+        datos = requests.get(url).content
 
         soup = BeautifulSoup(datos, features="html.parser")
         card_json = json.loads(str(soup))
 
         points = "." * (loaded_cards % 4)
         card_name = card_hash.split("-", 1)[1]
-        proxy_text = "🕵️" if api_key else ""
+        # proxy_text = "🕵️" if api_key else ""
 
         for i in range(4):
             print(LINE_UP, end=LINE_CLEAR)
         cant_line_clear = 0
 
-        loading_text = f"{Fore.CYAN}{proxy_text} Cargando 🎴: {loaded_cards} de {cards} ({card_name}){points}"
+        loading_text = f"{Fore.CYAN}Cargando 🎴: {loaded_cards} de {cards} ({card_name}){points}"
 
         loading_bar = (
             Fore.YELLOW

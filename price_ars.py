@@ -3,9 +3,9 @@ import math
 from prices_list import prices_list
 
 
-def price_ars(app_id, games_to_scan, scanned_games, api_key):
+def price_ars(app_id, games_to_scan, scanned_games):
     price_list, volume_list, cards, success, game_name = prices_list(
-        app_id, games_to_scan, scanned_games, api_key
+        app_id, games_to_scan, scanned_games
     )
 
     price_cards = 0
