@@ -22,7 +22,7 @@
 
 ## Descripción
 <p>
-  Herramienta para encontrar juegos rentables en Steam donde el precio de sus cromos supere el coste del propio producto 📈.
+  Herramienta (🇦🇷 Argentina) para encontrar juegos rentables en Steam donde el precio de sus cromos supere el coste del propio producto 📈.
   <br>
   🤔 ¿Cómo funciona?, simple, solo introduces uno o varios AppIDs o URLs de juegos de steam y analizará los cromos del mismo en el mercado para luego dar datos detallados sobre si su compra es rentable, posibles ganancias y comentarios útiles 💪.
   <img src="https://user-images.githubusercontent.com/23004689/215903955-2bd0bf4f-83b9-4f22-a763-0a0687dd1643.png">
@@ -100,7 +100,7 @@ python3 main.py
 🟢 Posibles soluciones
 - Intentar volver a escanear los juegos que dieron errores pero en otro día u horario.
 - Reinstalar o actualizar las librerías listadas en [🔎 Requisitos](#requisitos).
-- Prueba no utilizar ninguna VPN o Proxy.
+- Prueba cambiar, activar o desactivar una VPN o Proxy (de 🇦🇷 Argentina).
 - Ejecutar el programa desde una terminal diferente como por ejemplo [GitBash](https://git-scm.com/downloads) o PowerShell.
 
 🔵 Si el problema persiste, por favor reportarlo creando una nueva issue en:

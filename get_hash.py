@@ -26,10 +26,10 @@ def get_market_hash(app_id, scanned_games, games_to_scan):
         cards_names = cards_container.select(".text-sm.text-center.break-words")
         # card_images = soup.find_all("img", attrs={"class": "element-image"}, limit=trading_cards)
     except Exception as e:
-        os.system("clear")
+        # os.system("clear")
         print(">>>> INICIO ERROR: >>>>")
         print(e)
-        input("<<<< FIN ERROR <<<<")
+        print("<<<< FIN ERROR <<<<")
     # os.system('clear')
     loaded_cards = 0
     loading_text = "Cargando 🎴: {} de {}".format(loaded_cards, trading_cards)
