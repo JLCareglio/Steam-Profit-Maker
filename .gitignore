@@ -172,3 +172,6 @@ poetry.toml
 
 ### Archivos generados
 data/
+
+### vscode
+.vscode/
