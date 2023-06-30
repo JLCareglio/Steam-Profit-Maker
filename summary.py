@@ -9,7 +9,6 @@ LINE_CLEAR = "\x1b[2K"
 
 
 def single(summary):
-
     (
         app_id,
         game_name,
@@ -95,11 +94,9 @@ def single(summary):
 
 
 def multi(app_ids, cheap_list, average_list, no_profit_list, error_list):
-
     os.system("clear")
 
     if len(cheap_list) + len(average_list) != 0:
-
         if len(cheap_list) > 0:
             print(
                 f"""        {Fore.GREEN}= = = = = = = = = = = = = = =
@@ -137,8 +134,8 @@ def multi(app_ids, cheap_list, average_list, no_profit_list, error_list):
 
                 print(
                     Fore.MAGENTA
-                    + "\n─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─\n"
-                )  # 30
+                    + "\n─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─\n"
+                )
             for i in range(2):
                 print(LINE_UP, end=LINE_CLEAR)
 
@@ -178,8 +175,8 @@ def multi(app_ids, cheap_list, average_list, no_profit_list, error_list):
                 single(summary)
                 print(
                     Fore.MAGENTA
-                    + "\n─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─\n"
-                )  # 30
+                    + "\n─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─\n"
+                )
             for i in range(2):
                 print(LINE_UP, end=LINE_CLEAR)
 

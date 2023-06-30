@@ -55,7 +55,7 @@ def prices_list(app_id, games_to_scan, scanned_games):
         card_name = card_hash.split("-", 1)[1]
         # proxy_text = "🕵️" if api_key else ""
 
-        for i in range(4):
+        for i in range(5):
             print(LINE_UP, end=LINE_CLEAR)
         cant_line_clear = 0
 
@@ -76,7 +76,7 @@ def prices_list(app_id, games_to_scan, scanned_games):
 
         print(
             Style.BRIGHT
-            + f"🎮 {game_name}  ─  🔑 AppID: {str(app_id)}  ─  👀 Juego {scanned_games} de {games_to_scan}\n"
+            + f"🎮 {game_name}\n👀 Juego {scanned_games} de {games_to_scan}  ─  🔑 AppID: {str(app_id)}\n"
         )
         print(loading_text)
         print(loading_bar)

@@ -5,7 +5,6 @@ from bs4 import BeautifulSoup
 
 
 def get_market_hash(app_id, scanned_games, games_to_scan):
-
     url = "https://www.steamcardexchange.net/index.php?gamepage-appid-" + str(app_id)
     datos = requests.get(url).content
     soup = BeautifulSoup(datos, features="html.parser")
@@ -40,7 +39,7 @@ def get_market_hash(app_id, scanned_games, games_to_scan):
     )
 
     print(
-        "🎮 {}  ─  🔑 AppID: {}  ─  👀 Juego {} de {}\n".format(
+        "🎮 {}\n👀 Juego {} de {}  ─  🔑 AppID: {}\n".format(
             game_name, str(app_id), scanned_games, games_to_scan
         )
     )

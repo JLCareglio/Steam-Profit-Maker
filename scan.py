@@ -187,7 +187,7 @@ def multi_scan(apps):
                     game_name,
                 ) = price_ars(app_id, len(apps), scanned_games)
 
-                for i in range(4):
+                for i in range(5):
                     print(LINE_UP, end=LINE_CLEAR)
 
             except Exception as e:
@@ -316,7 +316,7 @@ def multi_scan(apps):
 
                 print(
                     Fore.MAGENTA
-                    + "\n─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─\n"
+                    + "\n─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─\n"
                 )
 
             else:
