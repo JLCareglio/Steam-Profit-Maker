@@ -40,7 +40,7 @@ def get_market_hash(app_id, scanned_games, games_to_scan):
 
     print(
         "🎮 {}\n👀 Juego {} de {}  ─  🔑 AppID: {}\n".format(
-            game_name, str(app_id), scanned_games, games_to_scan
+            game_name, scanned_games, games_to_scan, str(app_id)
         )
     )
 
