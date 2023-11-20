@@ -7,18 +7,25 @@
   <img src="https://img.shields.io/badge/license-GPL-blue">
   <img src="https://img.shields.io/badge/poetry-1.3-60A5FA?logo=poetry&color=60A5FA">
   <img src="https://img.shields.io/badge/python-v^3.9-3776AB?logo=python&color=3776AB">
-  <br>
-  <img src="https://img.shields.io/github/stars/JLCareglio?style=social">
 </p>
 
 ## Índice
-* [📝 Índice](#índice)
-* [ℹ️ Descripción](#descripción)
-* [🔎 Requisitos](#requisitos)
-* [🐾 Primeros Pasos](#primeros-pasos)
-* [👀 Ejemplo de Uso](#ejemplo-de-uso)
-* [💥 Posibles Errores](#posibles-errores)
-* [🧑‍💻 Contribuye programando](#contribuye-programando)
+* 📝 [Índice](#índice)
+* ⚠️ [Aviso sobre proyecto archivado](#aviso-sobre-proyecto-archivado) (Steam no opera más con ARS)
+* ℹ️ [Descripción](#descripción)
+* 🔎 [Requisitos](#requisitos)
+* 🐾 [Primeros Pasos](#primeros-pasos)
+* 👀 [Ejemplo de Uso](#ejemplo-de-uso)
+* 💥 [Posibles Errores](#posibles-errores)
+* 🧑‍💻 [Contribuye programando](#contribuye-programando)
+
+## Aviso sobre proyecto archivado
+<p>
+  ⚠️ El proyecto actual quedará archivado debido a que la tienda de Steam dejará de tener productos en pesos argentinos (ARS) y comenzará a utilizar precios en dólares (USD) en Argentina. Esta medida tomada por Steam no solo volverá obsoleto a SPM, sino que también terminará en gran medida con todos o casi todos los juegos rentables, aquellos en los que el precio de sus cromos superaba el costo del propio producto.
+</p>
+<p>
+  Publicación oficial de Steam: https://help.steampowered.com/es/faqs/view/2720-4EC7-B95A-1D2A
+</p>
 
 ## Descripción
 <p>
