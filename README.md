@@ -20,12 +20,9 @@
 * 🧑‍💻 [Contribuye programando](#contribuye-programando)
 
 ## Aviso sobre proyecto archivado
-<p>
-  ⚠️ El proyecto actual quedará archivado debido a que la tienda de Steam dejará de tener productos en pesos argentinos (ARS) y comenzará a utilizar precios en dólares (USD) en Argentina. Esta medida tomada por Steam no solo volverá obsoleto a SPM, sino que también terminará en gran medida con todos o casi todos los juegos rentables, aquellos en los que el precio de sus cromos superaba el costo del propio producto.
-</p>
-<p>
-  Publicación oficial de Steam: https://help.steampowered.com/es/faqs/view/2720-4EC7-B95A-1D2A
-</p>
+
+> [!IMPORTANT]  
+> ⚠️ El proyecto fue archivado debido a que la tienda de Steam **cambió su moneda de pesos argentinos (ARS) a dólares estadounidenses (USD) en Argentina**. Este cambio de precios no solo volvió obsoleto a SPM, sino que también **afectó en gran medida a todos o casi todos los juegos rentables**, aquellos en los que el precio de sus cromos superaba el costo del propio juego. Puedes encontrar más detalles en la [publicación oficial de Steam](https://help.steampowered.com/es/faqs/view/2720-4EC7-B95A-1D2A).
 
 ## Descripción
 <p>
